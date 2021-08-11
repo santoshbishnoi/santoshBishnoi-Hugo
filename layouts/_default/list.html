@@ -1,0 +1,41 @@
+{{ partial "header.html" .}}
+
+<div class="page">
+
+    <h3> {{ .Title}} </h3>
+
+    {{ .Content }}
+
+    <div class="posts">
+
+        {{ range .Pages }}
+        <div class="post">
+            <div class="date">
+                <span class="day">{{ .Date | dateFormat "02" }}</span>
+                <span class="year">{{ .Date | dateFormat "Jan 2006" }}</span>
+            </div>
+            <div class="body">
+                <h4 class="title"> 
+                    <a href="{{ .Permalink }}" >{{ .Title }}</a>
+
+                </h4>
+                <div class="description">
+                    {{ if gt (len .RawContent) 120}}
+                        {{ slicestr .RawContent 0 120}}...
+                    {{ else}}
+                        {{ .RawContent}}
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+        {{end}}
+    </div>
+</div>
+
+
+
+
+{{ partial "footer.html" .}}
+
+
+

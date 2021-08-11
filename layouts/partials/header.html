@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {{- $title := ( .Title ) -}}
+        {{- $siteTitle := ( .Site.Title ) -}}
+
+        {{ if .IsHome }}
+        <title> {{ $title }}</title>
+        {{ else }}
+        <title> {{ $title}} - {{ $siteTitle }}</title>
+        {{end}}
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="{{ .Site.BaseURL }}/static/style.css" type="text/css">
+    </head>
+    <body>
+        <section class="container wrapper">    
+        <div class="header">
+            <div class="logo">
+                <!-- <a> <img src="images/santosh.jpg" class="photo"></a> -->
+                <a href="/"><h1>Santosh Bishnoi</h1></a> 
+                <p class="tagline">CSE Student | Financial Market Enthusiast</p>
+                <!-- <hr> -->
+            </div>
+            <nav class="nav">
+                <a href="/blog"> Stories </a>
+            </nav>
+        </div>
+
+        <div class="content">
+        <!-- <hr> -->
+
+        <!-- </div>
+        </section>
+    </body>
+</html> -->
